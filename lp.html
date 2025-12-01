@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SwingPuzzles - 1-minute daily fact and puzzle. First a short surprising fact, then a tiny puzzle to solve. A quick refresh for your day.">
-    <title>SwingPuzzles - Daily 1-Minute Puzzle</title>
+    <meta name="description"
+          content="SwingPuzzles - 1-minute daily fact and puzzle. First a short surprising fact, then a tiny puzzle to solve. A quick refresh for your day."
+          data-i18n-meta="meta.description">
+    <title data-i18n="title.main">SwingPuzzles - Daily 1-Minute Puzzle</title>
     <style>
         /* Reset and base styles */
         * {
@@ -439,13 +441,13 @@
         <div class="container hero-inner">
             <div class="hero-mascot">
                 <!-- nahraď src reálnou cestou k maskotovi -->
-                <img src="mascot.webp" alt="SwingPuzzles mascot">
+                <img src="mascot.webp" alt="SwingPuzzles mascot" data-i18n-attr-alt="hero.mascotAlt">
             </div>
-            <h1>1-minute daily fact and puzzle</h1>
-            <p>First a short surprising fact, then a tiny puzzle to solve. A quick refresh for your day.</p>
-            <a href="#signup" class="cta-button">Get today's fact &amp; puzzle</a>
+            <h1 data-i18n="hero.heading">1-minute daily fact and puzzle</h1>
+            <p data-i18n="hero.subheading">First a short surprising fact, then a tiny puzzle to solve. A quick refresh for your day.</p>
+            <a href="#signup" class="cta-button" data-i18n="hero.primaryCta">Get today's fact &amp; puzzle</a>
             <div class="hero-note">
-                Free. No spam. Unsubscribe anytime.
+                <span data-i18n="hero.note">Free. No spam. Unsubscribe anytime.</span>
             </div>
         </div>
     </section>
@@ -453,29 +455,31 @@
     <!-- Email Form Section -->
     <div class="container">
         <section id="signup" class="email-form-section">
-            <h2>Get your first fact &amp; puzzle today</h2>
+            <h2 data-i18n="form.heading">Get your first fact &amp; puzzle today</h2>
             <form action="#" method="post">
                 <div class="form-group">
-                    <label for="name">First name (optional)</label>
+                    <label for="name" data-i18n="form.name.label">First name (optional)</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="Optional, for a more personal email">
+                        placeholder="Optional, for a more personal email"
+                        data-i18n-attr-placeholder="form.name.placeholder">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email address *</label>
+                    <label for="email" data-i18n="form.email.label">Email address *</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="your@email.com"
+                        data-i18n-attr-placeholder="form.email.placeholder"
                         required>
                 </div>
-                <button type="submit" class="submit-button">Send me today's fact &amp; puzzle</button>
+                <button type="submit" class="submit-button" data-i18n="form.submitCta">Send me today's fact &amp; puzzle</button>
             </form>
             <p class="gdpr-note">
-                After confirming your email, you'll start receiving daily or weekly emails with facts and puzzles from SwingPuzzles. You can unsubscribe at any time.
+                <span data-i18n="form.gdprNote">After confirming your email, you'll start receiving daily or weekly emails with facts and puzzles from SwingPuzzles. You can unsubscribe at any time.</span>
             </p>
         </section>
     </div>
@@ -483,15 +487,15 @@
     <!-- Video Section -->
     <section class="video-section">
         <div class="container">
-            <h2 class="section-title">See how it works in 30 seconds</h2>
+            <h2 class="section-title" data-i18n="video.heading">See how it works in 30 seconds</h2>
             <div class="video-container">
                 <video src="demo-video.mp4" controls muted playsinline>
-                    Your browser does not support the video tag.
+                    <span data-i18n="video.fallback">Your browser does not support the video tag.</span>
                 </video>
                 <p class="video-caption">
-                    This is an example: first a fun fact on screen, then a tiny puzzle to solve.
+                    <span data-i18n="video.caption">This is an example: first a fun fact on screen, then a tiny puzzle to solve.</span>
                 </p>
-                <a href="#signup" class="video-cta">Get today's fact &amp; puzzle</a>
+                <a href="#signup" class="video-cta" data-i18n="video.cta">Get today's fact &amp; puzzle</a>
             </div>
         </div>
     </section>
@@ -499,22 +503,22 @@
     <!-- How It Works Section -->
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">How it works</h2>
+            <h2 class="section-title" data-i18n="steps.heading">How it works</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>We email you a short surprising fact</h3>
-                    <p>Receive a fresh fact in your inbox to spark your curiosity and start your day with something interesting.</p>
+                    <h3 data-i18n="steps.1.title">We email you a short surprising fact</h3>
+                    <p data-i18n="steps.1.body">Receive a fresh fact in your inbox to spark your curiosity and start your day with something interesting.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>You solve a tiny puzzle related to the fact</h3>
-                    <p>Engage with a quick puzzle that connects to the fact you just learned, making it memorable and fun.</p>
+                    <h3 data-i18n="steps.2.title">You solve a tiny puzzle related to the fact</h3>
+                    <p data-i18n="steps.2.body">Engage with a quick puzzle that connects to the fact you just learned, making it memorable and fun.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>You get a quick 1-minute mental reset</h3>
-                    <p>Switch your mind from stress to play with a satisfying brain break that leaves you refreshed.</p>
+                    <h3 data-i18n="steps.3.title">You get a quick 1-minute mental reset</h3>
+                    <p data-i18n="steps.3.body">Switch your mind from stress to play with a satisfying brain break that leaves you refreshed.</p>
                 </div>
             </div>
         </div>
@@ -523,22 +527,22 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">Why people like it</h2>
+            <h2 class="section-title" data-i18n="benefits.heading">Why people like it</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">⏱️</div>
-                    <h3>Takes about a minute a day</h3>
-                    <p>A quick daily habit that fits perfectly into your morning routine or coffee break.</p>
+                    <h3 data-i18n="benefits.1.title">Takes about a minute a day</h3>
+                    <p data-i18n="benefits.1.body">A quick daily habit that fits perfectly into your morning routine or coffee break.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🧠</div>
-                    <h3>Helps you switch your mind from stress to play</h3>
-                    <p>A gentle mental shift that helps you break away from worries and engage with something fun.</p>
+                    <h3 data-i18n="benefits.2.title">Helps you switch your mind from stress to play</h3>
+                    <p data-i18n="benefits.2.body">A gentle mental shift that helps you break away from worries and engage with something fun.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">✨</div>
-                    <h3>Family-friendly and screen-friendly</h3>
-                    <p>Safe, positive content that anyone can enjoy without worry. Perfect for all ages.</p>
+                    <h3 data-i18n="benefits.3.title">Family-friendly and screen-friendly</h3>
+                    <p data-i18n="benefits.3.body">Safe, positive content that anyone can enjoy without worry. Perfect for all ages.</p>
                 </div>
             </div>
         </div>
@@ -547,24 +551,212 @@
     <!-- Final CTA Section -->
     <section class="final-cta">
         <div class="container">
-            <h2>Ready for your next 1-minute break?</h2>
-            <a href="#signup" class="cta-button">Get today's fact &amp; puzzle</a>
+            <h2 data-i18n="finalCta.heading">Ready for your next 1-minute break?</h2>
+            <a href="#signup" class="cta-button" data-i18n="finalCta.primaryCta">Get today's fact &amp; puzzle</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-brand">SwingPuzzles</div>
-            <div class="footer-tagline">Daily facts and puzzles for everyone</div>
+            <div class="footer-brand" data-i18n="footer.brand">SwingPuzzles</div>
+            <div class="footer-tagline" data-i18n="footer.tagline">Daily facts and puzzles for everyone</div>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Contact</a>
+                <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="#" data-i18n="footer.contact">Contact</a>
             </div>
             <div class="footer-note">
-                © SwingPuzzles
+                <span data-i18n="footer.copyright">© SwingPuzzles</span>
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            const translations = {
+                en: {
+                    "meta.description": "SwingPuzzles - 1-minute daily fact and puzzle. First a short surprising fact, then a tiny puzzle to solve. A quick refresh for your day.",
+                    "title.main": "SwingPuzzles - Daily 1-Minute Puzzle",
+                    "hero.mascotAlt": "SwingPuzzles mascot",
+                    "hero.heading": "1-minute daily fact and puzzle",
+                    "hero.subheading": "First a short surprising fact, then a tiny puzzle to solve. A quick refresh for your day.",
+                    "hero.primaryCta": "Get today's fact & puzzle",
+                    "hero.note": "Free. No spam. Unsubscribe anytime.",
+                    "form.heading": "Get your first fact & puzzle today",
+                    "form.name.label": "First name (optional)",
+                    "form.name.placeholder": "Optional, for a more personal email",
+                    "form.email.label": "Email address *",
+                    "form.email.placeholder": "your@email.com",
+                    "form.submitCta": "Send me today's fact & puzzle",
+                    "form.gdprNote": "After confirming your email, you'll start receiving daily or weekly emails with facts and puzzles from SwingPuzzles. You can unsubscribe at any time.",
+                    "video.heading": "See how it works in 30 seconds",
+                    "video.fallback": "Your browser does not support the video tag.",
+                    "video.caption": "This is an example: first a fun fact on screen, then a tiny puzzle to solve.",
+                    "video.cta": "Get today's fact & puzzle",
+                    "steps.heading": "How it works",
+                    "steps.1.title": "We email you a short surprising fact",
+                    "steps.1.body": "Receive a fresh fact in your inbox to spark your curiosity and start your day with something interesting.",
+                    "steps.2.title": "You solve a tiny puzzle related to the fact",
+                    "steps.2.body": "Engage with a quick puzzle that connects to the fact you just learned, making it memorable and fun.",
+                    "steps.3.title": "You get a quick 1-minute mental reset",
+                    "steps.3.body": "Switch your mind from stress to play with a satisfying brain break that leaves you refreshed.",
+                    "benefits.heading": "Why people like it",
+                    "benefits.1.title": "Takes about a minute a day",
+                    "benefits.1.body": "A quick daily habit that fits perfectly into your morning routine or coffee break.",
+                    "benefits.2.title": "Helps you switch your mind from stress to play",
+                    "benefits.2.body": "A gentle mental shift that helps you break away from worries and engage with something fun.",
+                    "benefits.3.title": "Family-friendly and screen-friendly",
+                    "benefits.3.body": "Safe, positive content that anyone can enjoy without worry. Perfect for all ages.",
+                    "finalCta.heading": "Ready for your next 1-minute break?",
+                    "finalCta.primaryCta": "Get today's fact & puzzle",
+                    "footer.brand": "SwingPuzzles",
+                    "footer.tagline": "Daily facts and puzzles for everyone",
+                    "footer.privacy": "Privacy Policy",
+                    "footer.contact": "Contact",
+                    "footer.copyright": "© SwingPuzzles"
+                },
+                de: {
+                    "meta.description": "SwingPuzzles – 1‑minütige tägliche Fakten und Rätsel. Erst eine kurze überraschende Info, dann ein kleines Rätsel dazu. Ein schneller Frischekick für deinen Tag.",
+                    "title.main": "SwingPuzzles – Dein tägliches 1‑Minuten‑Rätsel",
+                    "hero.mascotAlt": "SwingPuzzles Maskottchen",
+                    "hero.heading": "Dein täglicher 1‑Minuten‑Fakt mit Rätsel",
+                    "hero.subheading": "Zuerst ein kurzer überraschender Fakt, dann ein kleines Rätsel dazu. Ein schneller mentaler Reset für deinen Tag.",
+                    "hero.primaryCta": "Hol dir den Fakt & das Rätsel von heute",
+                    "hero.note": "Kostenlos. Kein Spam. Jederzeit abbestellbar.",
+                    "form.heading": "Hol dir heute dein erstes Fakt-&-Rätsel‑Paket",
+                    "form.name.label": "Vorname (optional)",
+                    "form.name.placeholder": "Optional – für eine persönlichere E‑Mail",
+                    "form.email.label": "E‑Mail‑Adresse *",
+                    "form.email.placeholder": "du@example.com",
+                    "form.submitCta": "Schick mir den Fakt & das Rätsel von heute",
+                    "form.gdprNote": "Nachdem du deine E‑Mail bestätigt hast, bekommst du täglich oder wöchentlich Fakten und Rätsel von SwingPuzzles. Du kannst dich jederzeit wieder abmelden.",
+                    "video.heading": "So funktioniert es – in 30 Sekunden",
+                    "video.fallback": "Dein Browser unterstützt das Video-Tag nicht.",
+                    "video.caption": "Ein Beispiel: erst ein spannender Fakt auf dem Bildschirm, dann ein kleines Rätsel dazu.",
+                    "video.cta": "Hol dir den Fakt & das Rätsel von heute",
+                    "steps.heading": "So läuft es ab",
+                    "steps.1.title": "Wir schicken dir einen kurzen, überraschenden Fakt",
+                    "steps.1.body": "Du bekommst einen frischen Fakt in dein Postfach, der deine Neugier weckt und deinen Tag interessant startet.",
+                    "steps.2.title": "Du löst ein kleines Rätsel passend zum Fakt",
+                    "steps.2.body": "Ein schnelles Rätsel, das direkt an den Fakt anknüpft – so bleibt er besser im Kopf und macht mehr Spaß.",
+                    "steps.3.title": "Du gönnst dir einen 1‑Minuten‑Mental-Reset",
+                    "steps.3.body": "Du schaltest kurz von Stress auf Spielmodus um – mit einer kurzen Gehirnpause, nach der du dich frischer fühlst.",
+                    "benefits.heading": "Warum Leute es mögen",
+                    "benefits.1.title": "Dauert ungefähr eine Minute am Tag",
+                    "benefits.1.body": "Eine kleine tägliche Gewohnheit, die perfekt in deine Morgenroutine oder Kaffeepause passt.",
+                    "benefits.2.title": "Hilft dir, vom Stress in den Spielmodus zu wechseln",
+                    "benefits.2.body": "Ein sanfter mentaler Wechsel, der dich kurz aus dem Grübeln holt und zu etwas Spielerischem bringt.",
+                    "benefits.3.title": "Familienfreundlich und bildschirmfreundlich",
+                    "benefits.3.body": "Positive, unbedenkliche Inhalte, die allen Spaß machen. Geeignet für alle Altersgruppen.",
+                    "finalCta.heading": "Bereit für deine nächste 1‑Minuten‑Pause?",
+                    "finalCta.primaryCta": "Hol dir den Fakt & das Rätsel von heute",
+                    "footer.brand": "SwingPuzzles",
+                    "footer.tagline": "Tägliche Fakten und Rätsel für alle",
+                    "footer.privacy": "Datenschutzerklärung",
+                    "footer.contact": "Kontakt",
+                    "footer.copyright": "© SwingPuzzles"
+                }
+            };
+
+            const supportedLangs = ["en", "de"];
+            const defaultLang = "en";
+
+            function getLangFromUrl() {
+                const params = new URLSearchParams(window.location.search);
+                const lang = params.get("lang");
+                if (lang && supportedLangs.includes(lang.toLowerCase())) {
+                    return lang.toLowerCase();
+                }
+                return defaultLang;
+            }
+
+            function setLangInUrl(lang) {
+                const url = new URL(window.location.href);
+                url.searchParams.set("lang", lang);
+                window.history.replaceState({}, "", url.toString());
+            }
+
+            function applyTranslations(dict) {
+                if (!dict) return;
+
+                // Text nodes
+                document.querySelectorAll("[data-i18n]").forEach(el => {
+                    const key = el.getAttribute("data-i18n");
+                    if (dict[key]) {
+                        el.textContent = dict[key];
+                    }
+                });
+
+                // Attribute-based translations (placeholder, alt, etc.)
+                document.querySelectorAll("[data-i18n-attr-placeholder]").forEach(el => {
+                    const key = el.getAttribute("data-i18n-attr-placeholder");
+                    if (dict[key]) {
+                        el.setAttribute("placeholder", dict[key]);
+                    }
+                });
+
+                document.querySelectorAll("[data-i18n-attr-alt]").forEach(el => {
+                    const key = el.getAttribute("data-i18n-attr-alt");
+                    if (dict[key]) {
+                        el.setAttribute("alt", dict[key]);
+                    }
+                });
+
+                // Meta tags (e.g., description)
+                document.querySelectorAll("[data-i18n-meta]").forEach(el => {
+                    const key = el.getAttribute("data-i18n-meta");
+                    if (dict[key]) {
+                        el.setAttribute("content", dict[key]);
+                    }
+                });
+
+                // Also update the document title if key exists
+                const titleEl = document.querySelector("title[data-i18n]");
+                if (titleEl) {
+                    const key = titleEl.getAttribute("data-i18n");
+                    if (dict[key]) {
+                        titleEl.textContent = dict[key];
+                    }
+                }
+            }
+
+            function markActiveLanguage(lang) {
+                document.querySelectorAll("[data-lang-switch]").forEach(link => {
+                    if (link.getAttribute("data-lang-switch") === lang) {
+                        link.classList.add("active-lang");
+                    } else {
+                        link.classList.remove("active-lang");
+                    }
+                });
+            }
+
+            function initLanguage() {
+                const lang = getLangFromUrl();
+                applyTranslations(translations[lang] || translations[defaultLang]);
+                markActiveLanguage(lang);
+
+                // Ensure URL always contains current language
+                setLangInUrl(lang);
+
+                // Wire up switcher links to change language without full reload
+                document.querySelectorAll("[data-lang-switch]").forEach(link => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const newLang = this.getAttribute("data-lang-switch");
+                        if (!supportedLangs.includes(newLang)) return;
+                        applyTranslations(translations[newLang] || translations[defaultLang]);
+                        markActiveLanguage(newLang);
+                        setLangInUrl(newLang);
+                    });
+                });
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initLanguage);
+            } else {
+                initLanguage();
+            }
+        })();
+    </script>
 </body>
 </html>
