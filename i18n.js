@@ -67,7 +67,7 @@
             "steps.2.body": "Ein schnelles Rätsel, das direkt an den Fakt anknüpft – so bleibt er besser im Kopf und macht mehr Spaß.",
             "steps.3.title": "Du gönnst dir einen 1‑Minuten‑Mental-Reset",
             "steps.3.body": "Du schaltest kurz von Stress auf Spielmodus um – mit einer kurzen Gehirnpause, nach der du dich frischer fühlst.",
-            "benefits.heading": "Warum Leute es mögen",
+            "benefits.heading": "Warum es den Leuten gefällt",
             "benefits.1.title": "Dauert ungefähr eine Minute am Tag",
             "benefits.1.body": "Eine kleine tägliche Gewohnheit, die perfekt in deine Morgenroutine oder Kaffeepause passt.",
             "benefits.2.title": "Hilft dir, vom Stress in den Spielmodus zu wechseln",
@@ -162,7 +162,7 @@
             "footer.tagline": "Des faits et des énigmes pour tout le monde, chaque jour",
             "footer.privacy": "Politique de confidentialité",
             "footer.contact": "Contact",
-            "footerCopyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles"
         },
         it: {
             "meta.description": "SwingPuzzles – un fatto curioso e un rompicapo da 1 minuto al giorno. Prima un fatto sorprendente, poi un piccolo enigma da risolvere. Una ricarica veloce per la tua giornata.",
@@ -209,7 +209,7 @@
             "meta.description": "SwingPuzzles – minutové denní zajímavosti a hádanky. Nejdřív krátký překvapivý fakt, potom drobná úloha k zamyšlení. Rychlý mentální refresh pro tvůj den.",
             "title.main": "SwingPuzzles – Tvoje minutová hádanka na každý den",
             "hero.mascotAlt": "Maskot SwingPuzzles",
-            "hero.heading": "Tvůj denní jednominutový fakt s hádankou",
+            "hero.heading": "Tvůj denní minutový fakt s hádankou",
             "hero.subheading": "Nejdřív krátký překvapivý fakt, potom malá hádanka k němu. Rychlý mentální reset pro tvůj den.",
             "hero.primaryCta": "Chci dnešní fakt a hádanku",
             "hero.note": "Zdarma. Bez spamu. Odhlášení kdykoliv.",
