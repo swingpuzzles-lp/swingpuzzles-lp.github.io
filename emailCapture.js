@@ -110,11 +110,6 @@
             }
 
             const FBIdentifiers = {
-                getFbclid() {
-                    const params = new URLSearchParams(window.location.search);
-                    return params.get("fbclid") || null;
-                },
-            
                 getFbp() {
                     return this.getCookie("_fbp") || null;
                 },
@@ -145,9 +140,6 @@
                 hotPot: EmailCaptureService.generateHotPotValue(),
                 recaptchaToken: "",
                 timezone: EmailCaptureService.getCurrentTimezone(),
-            
-                // NEW:
-                fbclid: FBIdentifiers.getFbclid(),
                 fbc: FBIdentifiers.getFbc(),
                 fbp: FBIdentifiers.getFbp(),
             };
