@@ -331,34 +331,26 @@ body {
 .footer {
     background-color: #4A3100;
     color: white;
-    padding: 60px 20px 30px;
-    text-align: center;
+    padding: 40px 20px 30px;
 }
 
-.footer-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
-.footer-tagline {
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.footer-links {
-    margin-bottom: 30px;
-}
-
-.footer-links a {
+.footer a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     opacity: 0.9;
     transition: opacity 0.3s;
+    font-size: 0.95rem;
 }
 
-.footer-links a:hover {
+.footer a:hover {
     opacity: 1;
     text-decoration: underline;
 }
@@ -366,8 +358,8 @@ body {
 .footer-note {
     font-size: 0.85rem;
     opacity: 0.8;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 /* Mobile Responsiveness */

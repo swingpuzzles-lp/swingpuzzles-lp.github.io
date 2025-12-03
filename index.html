@@ -136,18 +136,24 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-brand" data-i18n="footer.brand">SwingPuzzles</div>
-            <div class="footer-tagline" data-i18n="footer.tagline">Daily facts and puzzles for everyone</div>
-            <div class="footer-links">
-                <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
-                <a href="#" data-i18n="footer.contact">Contact</a>
-            </div>
-            <div class="footer-note">
-                <span data-i18n="footer.copyright">© SwingPuzzles</span>
-            </div>
+            <a id="privacy-link" href="#" data-i18n="footer.privacy">Privacy Policy</a>
+            <div class="footer-note">© SwingPuzzles</div>
         </div>
     </footer>
-
+    
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const lang = params.get("lang");
+    
+        const privacyLink = document.getElementById("privacy-link");
+    
+        if (lang) {
+            privacyLink.href = `https://swingpuzzles.com/privacy-policy?lang=${lang}`;
+        } else {
+            privacyLink.href = "https://swingpuzzles.com/privacy-policy";
+        }
+    </script>
+    
     <script src="i18n.js"></script>
     <script src="emailCapture.js"></script>
 </body>
