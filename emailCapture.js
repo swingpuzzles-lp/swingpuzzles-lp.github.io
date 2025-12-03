@@ -109,6 +109,35 @@
                 return;
             }
 
+            const FBIdentifiers = {
+                getFbclid() {
+                    const params = new URLSearchParams(window.location.search);
+                    return params.get("fbclid") || null;
+                },
+            
+                getFbp() {
+                    return this.getCookie("_fbp") || null;
+                },
+            
+                getFbc() {
+                    // Try read cookie first
+                    const existing = this.getCookie("_fbc");
+                    if (existing) return existing;
+            
+                    // If no cookie, try reconstruct from fbclid
+                    const fbclid = this.getFbclid();
+                    if (!fbclid) return null;
+            
+                    const timestamp = Date.now();
+                    return `fb.1.${timestamp}.${fbclid}`;
+                },
+            
+                getCookie(name) {
+                    const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+                    return match ? match[2] : null;
+                },
+            };
+            
             const payload = {
                 email,
                 name: name || undefined,
@@ -116,6 +145,11 @@
                 hotPot: EmailCaptureService.generateHotPotValue(),
                 recaptchaToken: "",
                 timezone: EmailCaptureService.getCurrentTimezone(),
+            
+                // NEW:
+                fbclid: FBIdentifiers.getFbclid(),
+                fbc: FBIdentifiers.getFbc(),
+                fbp: FBIdentifiers.getFbp(),
             };
 
             messageEl.textContent = "Sending...";
