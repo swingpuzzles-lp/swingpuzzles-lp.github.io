@@ -39,7 +39,11 @@
             "footer.tagline": "Daily facts and puzzles for everyone",
             "footer.privacy": "Privacy Policy",
             "footer.contact": "Contact",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "Thank you for subscribing to SwingPuzzles!",
+            "success.title": "Thank you! - SwingPuzzles",
+            "success.heading": "Thank you!",
+            "success.message": "Check your inbox to confirm your subscription. We'll send you your first fact & puzzle soon!"
         },
         de: {
             "meta.description": "SwingPuzzles – 1‑minütige tägliche Fakten und Rätsel. Erst eine kurze überraschende Info, dann ein kleines Rätsel dazu. Ein schneller Frischekick für deinen Tag.",
@@ -80,7 +84,11 @@
             "footer.tagline": "Tägliche Fakten und Rätsel für alle",
             "footer.privacy": "Datenschutzerklärung",
             "footer.contact": "Kontakt",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "Vielen Dank für deine Anmeldung bei SwingPuzzles!",
+            "success.title": "Vielen Dank! - SwingPuzzles",
+            "success.heading": "Vielen Dank!",
+            "success.message": "Bitte prüfe dein Postfach, um deine Anmeldung zu bestätigen. Wir schicken dir bald dein erstes Fakt & Rätsel!"
         },
         es: {
             "meta.description": "SwingPuzzles: un dato curioso y un acertijo diario de 1 minuto. Primero un dato sorprendente y después un pequeño reto para resolver. Un respiro rápido para tu día.",
@@ -121,7 +129,11 @@
             "footer.tagline": "Datos y acertijos diarios para todo el mundo",
             "footer.privacy": "Política de privacidad",
             "footer.contact": "Contacto",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "¡Gracias por suscribirte a SwingPuzzles!",
+            "success.title": "¡Gracias! - SwingPuzzles",
+            "success.heading": "¡Gracias!",
+            "success.message": "Revisa tu bandeja de entrada para confirmar tu suscripción. ¡Te enviaremos tu primer dato y acertijo pronto!"
         },
         fr: {
             "meta.description": "SwingPuzzles – un fait surprenant et une énigme en 1 minute par jour. D’abord un petit fait étonnant, puis une mini énigme à résoudre. Un rapide bol d’air pour ta journée.",
@@ -162,7 +174,11 @@
             "footer.tagline": "Des faits et des énigmes pour tout le monde, chaque jour",
             "footer.privacy": "Politique de confidentialité",
             "footer.contact": "Contact",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "Merci de t'être abonné à SwingPuzzles !",
+            "success.title": "Merci ! - SwingPuzzles",
+            "success.heading": "Merci !",
+            "success.message": "Vérifie ta boîte mail pour confirmer ton abonnement. On t'enverra bientôt ton premier fait et énigme !"
         },
         it: {
             "meta.description": "SwingPuzzles – un fatto curioso e un rompicapo da 1 minuto al giorno. Prima un fatto sorprendente, poi un piccolo enigma da risolvere. Una ricarica veloce per la tua giornata.",
@@ -203,7 +219,11 @@
             "footer.tagline": "Fatti e rompicapi quotidiani per tutti",
             "footer.privacy": "Informativa sulla privacy",
             "footer.contact": "Contatti",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "Grazie per esserti iscritto a SwingPuzzles!",
+            "success.title": "Grazie! - SwingPuzzles",
+            "success.heading": "Grazie!",
+            "success.message": "Controlla la tua casella di posta per confermare l'iscrizione. Ti invieremo presto il tuo primo fatto e rompicapo!"
         },
         cs: {
             "meta.description": "SwingPuzzles – minutové denní zajímavosti a hádanky. Nejdřív krátký překvapivý fakt, potom drobná úloha k zamyšlení. Rychlý mentální refresh pro tvůj den.",
@@ -244,7 +264,11 @@
             "footer.tagline": "Denní fakta a hádanky pro každého",
             "footer.privacy": "Zásady ochrany osobních údajů",
             "footer.contact": "Kontakt",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "Děkujeme za přihlášení k SwingPuzzles!",
+            "success.title": "Děkujeme! - SwingPuzzles",
+            "success.heading": "Děkujeme!",
+            "success.message": "Zkontroluj svou schránku a potvrď přihlášení. Brzy ti pošleme tvůj první fakt a hádanku!"
         },
         sk: {
             "meta.description": "SwingPuzzles – minútové denné fakty a hádanky. Najprv krátky prekvapivý fakt, potom drobná úloha na zamyslenie. Rýchly mentálny refresh pre tvoj deň.",
@@ -285,7 +309,11 @@
             "footer.tagline": "Denné fakty a hádanky pre každého",
             "footer.privacy": "Zásady ochrany osobných údajov",
             "footer.contact": "Kontakt",
-            "footer.copyright": "© SwingPuzzles"
+            "footer.copyright": "© SwingPuzzles",
+            "success.meta.description": "Ďakujeme za prihlásenie k SwingPuzzles!",
+            "success.title": "Ďakujeme! - SwingPuzzles",
+            "success.heading": "Ďakujeme!",
+            "success.message": "Skontroluj svoju schránku a potvrď prihlásenie. Čoskoro ti pošleme tvoj prvý fakt a hádanku!"
         }
     };
 

@@ -150,10 +150,9 @@
             const result = await EmailCaptureService.submitEmailCapture(payload);
 
             if (result.success) {
-                messageEl.textContent =
-                    result.message || "Check your inbox to confirm your subscription.";
-                messageEl.style.color = "#0a7b28";
-                form.reset();
+                // Redirect to success page with language parameter
+                const currentLang = EmailCaptureService.getCurrentLocale();
+                window.location.href = `success.html?lang=${currentLang}`;
             } else {
                 messageEl.textContent =
                     result.message || "Something went wrong. Please try again.";
