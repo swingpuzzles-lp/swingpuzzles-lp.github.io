@@ -35,6 +35,16 @@ body {
     max-width: 700px;
     margin: 0 auto;
 }
+
+.inbox-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* Container */
 .container {
     max-width: 1200px;

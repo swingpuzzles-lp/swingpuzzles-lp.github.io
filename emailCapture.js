@@ -150,9 +150,14 @@
             const result = await EmailCaptureService.submitEmailCapture(payload);
 
             if (result.success) {
-                // Redirect to success page with language parameter
+                // Redirect to success page with language and email provider parameters
                 const currentLang = EmailCaptureService.getCurrentLocale();
-                window.location.href = `success.html?lang=${currentLang}`;
+                // Extract email provider (part after @, before first dot)
+                const emailParts = email.split('@');
+                const domain = emailParts[1];
+                const emailProvider = domain ? domain.split('.')[0] || '' : '';
+                const providerParam = emailProvider ? `&provider=${encodeURIComponent(emailProvider)}` : '';
+                window.location.href = `success.html?lang=${currentLang}${providerParam}`;
             } else {
                 messageEl.textContent =
                     result.message || "Something went wrong. Please try again.";

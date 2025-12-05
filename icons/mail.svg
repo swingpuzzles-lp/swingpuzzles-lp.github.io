@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Envelope body -->
+  <path fill="#FFC166" d="M6 18h36v18c0 2-1.6 3.6-3.6 3.6H9.6C7.6 39.6 6 38 6 36V18z"></path>
+  
+  <!-- Envelope flap -->
+  <path fill="#FFB64C" d="M6 18l18 10 18-10H6z"></path>
+
+  <!-- Green circle -->
+  <circle cx="24" cy="10" r="8" fill="#6DD58C"></circle>
+
+  <!-- Checkmark -->
+  <path d="M21 10l3 3 5-5" stroke="#fff" stroke-width="3"></path>
+</svg>

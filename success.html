@@ -20,6 +20,16 @@
             <p data-i18n="success.message">
                 Check your inbox to confirm your subscription. We'll send you your first fact & puzzle soon!
             </p>
+
+            <!-- NOVÉ CTA TLAČIDLO -->
+            <a id="open-inbox-btn" class="cta-button" href="#" style="display:none">
+                <span id="inbox-icon" class="inbox-icon"></span>
+                <span id="inbox-text"></span>
+            </a>
+
+            <p class="hero-note">
+                If you don't see the email, check your Spam or Promotions folder.
+            </p>
         </div>
     </section>
 
@@ -34,17 +44,50 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const lang = params.get("lang");
-    
+        const provider = params.get("provider");
+
+        // --- PRIVACY LINK ---
         const privacyLink = document.getElementById("privacy-link");
-    
-        if (lang) {
-            privacyLink.href = `https://swingpuzzles.com/privacy-policy?lang=${lang}`;
-        } else {
-            privacyLink.href = "https://swingpuzzles.com/privacy-policy";
+        privacyLink.href = lang
+            ? `https://swingpuzzles.com/privacy-policy?lang=${lang}`
+            : "https://swingpuzzles.com/privacy-policy";
+
+        // --- INBOX BUTTON ---
+        const inboxBtn   = document.getElementById("open-inbox-btn");
+        const inboxIcon  = document.getElementById("inbox-icon");
+        const inboxText  = document.getElementById("inbox-text");
+
+        const providerMap = {
+            gmail:   { url: "https://mail.google.com",       label: "Open Gmail",        icon: "icons/gmail.svg" },
+            outlook: { url: "https://outlook.live.com/mail", label: "Open Outlook",      icon: "icons/mail.svg" },
+            hotmail:{ url: "https://outlook.live.com/mail",  label: "Open Outlook",      icon: "icons/mail.svg" },
+            live:    { url: "https://outlook.live.com/mail", label: "Open Outlook",      icon: "icons/mail.svg" },
+            yahoo:   { url: "https://mail.yahoo.com",        label: "Open Yahoo Mail",   icon: "icons/mail.svg" },
+            centrum: { url: "https://mail.centrum.sk",       label: "Open Centrum Mail", icon: "icons/mail.svg" },
+            azet:    { url: "https://mail.centrum.sk",       label: "Open Azet Mail",    icon: "icons/mail.svg" },
+            zoznam:  { url: "https://mail.zoznam.sk",        label: "Open Zoznam Mail",  icon: "icons/mail.svg" },
+            proton:  { url: "https://mail.proton.me",        label: "Open Proton Mail",  icon: "icons/mail.svg" },
+            icloud:  { url: "https://www.icloud.com/mail",   label: "Open iCloud Mail",  icon: "icons/mail.svg" },
+            me:      { url: "https://www.icloud.com/mail",   label: "Open iCloud Mail",  icon: "icons/mail.svg" },
+            mac:     { url: "https://www.icloud.com/mail",   label: "Open iCloud Mail",  icon: "icons/mail.svg" },
+        };
+
+        if (inboxBtn) {
+            const info = provider ? providerMap[provider] : null;
+
+            if (info) {
+                inboxBtn.href = info.url;
+                inboxText.textContent = info.label;
+                inboxIcon.style.backgroundImage = `url('${info.icon}')`;
+
+                inboxBtn.style.display = "inline-flex";
+                inboxBtn.style.alignItems = "center";
+            } else {
+                inboxBtn.style.display = "none";
+            }
         }
     </script>
-    
+
     <script src="i18n.js"></script>
 </body>
 </html>
-
