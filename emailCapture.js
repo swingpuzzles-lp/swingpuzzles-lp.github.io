@@ -138,12 +138,39 @@
                 },
             };
             
+            // Obtain reCAPTCHA token (dev/prod keys)
+            let recaptchaToken = "";
+            try {
+                const host = window.location.hostname;
+                const isLocal =
+                    host === "localhost" ||
+                    host === "127.0.0.1" ||
+                    host === "" ||
+                    host === "0.0.0.0";
+
+                const recaptchaSiteKey = isLocal
+                    ? "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Dev/test key
+                    : "6LfZaPArAAAAAMtiOUSt4q2DfYIADMEXxVP-maLm"; // Production key
+
+                messageEl.textContent = "Please complete reCAPTCHA...";
+                messageEl.style.color = "#555555";
+
+                await RecaptchaManager.loadRecaptcha(recaptchaSiteKey);
+                recaptchaToken = await RecaptchaManager.showCheckbox(() => {});
+            } catch (recaptchaError) {
+                console.error("reCAPTCHA error:", recaptchaError);
+                messageEl.textContent =
+                    "reCAPTCHA verification failed. Please try again.";
+                messageEl.style.color = "#b00020";
+                return;
+            }
+
             const payload = {
                 email,
                 name: name || undefined,
                 locale: EmailCaptureService.getCurrentLocale(),
                 hotPot: EmailCaptureService.generateHotPotValue(),
-                recaptchaToken: "",
+                recaptchaToken,
                 timezone: EmailCaptureService.getCurrentTimezone(),
                 fbc: FBIdentifiers.getFbc(),
                 fbp: FBIdentifiers.getFbp(),
