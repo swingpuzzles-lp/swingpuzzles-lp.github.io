@@ -187,9 +187,24 @@
                 // Extract email provider (part after @, before first dot)
                 const emailParts = email.split('@');
                 const domain = emailParts[1];
-                const emailProvider = domain ? domain.split('.')[0] || '' : '';
-                const providerParam = emailProvider ? `&provider=${encodeURIComponent(emailProvider)}` : '';
-                window.location.href = `success.html?lang=${currentLang}${providerParam}`;
+                const emailProvider = domain ? domain.split('.')?.[0] || '' : '';
+                
+                // Store parameters in sessionStorage as backup (in case Vite redirect loses them)
+                sessionStorage.setItem('successParams', JSON.stringify({
+                    lang: currentLang,
+                    provider: emailProvider
+                }));
+                
+                // Build URL with URLSearchParams for proper encoding
+                const params = new URLSearchParams();
+                params.set('lang', currentLang);
+                if (emailProvider) {
+                    params.set('provider', emailProvider);
+                }
+
+                const url = `success.html?${params.toString()}`;
+
+                window.location.href = url;
             } else {
                 messageEl.textContent =
                     result.message || "Something went wrong. Please try again.";

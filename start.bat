@@ -1,2 +1,2 @@
-npm run dev
+serve -l 5173 .
 pause

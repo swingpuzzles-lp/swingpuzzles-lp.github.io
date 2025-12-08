@@ -43,9 +43,36 @@
     </footer>
     
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const lang = params.get("lang");
-        const provider = params.get("provider");
+        // Get parameters from URL first, fallback to sessionStorage if Vite redirect lost them
+        let params = new URLSearchParams(window.location.search);
+        let lang = params.get("lang");
+        let provider = params.get("provider");
+        
+        // If parameters are missing (Vite redirect issue), restore from sessionStorage
+        if (!lang || !provider) {
+            try {
+                const stored = sessionStorage.getItem('successParams');
+                if (stored) {
+                    const storedParams = JSON.parse(stored);
+                    if (!lang) lang = storedParams.lang;
+                    if (!provider) provider = storedParams.provider;
+                    
+                    // Restore URL parameters
+                    const newParams = new URLSearchParams(window.location.search);
+                    if (lang && !newParams.has('lang')) newParams.set('lang', lang);
+                    if (provider && !newParams.has('provider')) newParams.set('provider', provider);
+                    
+                    // Update URL without page reload
+                    const newUrl = window.location.pathname + (newParams.toString() ? '?' + newParams.toString() : '');
+                    window.history.replaceState({}, '', newUrl);
+                    
+                    // Clean up sessionStorage
+                    sessionStorage.removeItem('successParams');
+                }
+            } catch (e) {
+                console.error('Error restoring parameters from sessionStorage:', e);
+            }
+        }
 
         // --- PRIVACY LINK ---
         const privacyLink = document.getElementById("privacy-link");
