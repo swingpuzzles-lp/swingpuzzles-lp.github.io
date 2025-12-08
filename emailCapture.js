@@ -114,6 +114,11 @@
                     return this.getCookie("_fbp") || null;
                 },
             
+                getFbclid() {
+                    const params = new URLSearchParams(window.location.search);
+                    return params.get("fbclid") || null;
+                },
+            
                 getFbc() {
                     // Try read cookie first
                     const existing = this.getCookie("_fbc");
