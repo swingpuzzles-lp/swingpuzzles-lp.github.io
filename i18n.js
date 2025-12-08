@@ -331,7 +331,17 @@
 
     function setLangInUrl(lang) {
         const url = new URL(window.location.href);
-        url.searchParams.set("lang", lang);
+        // Preserve all existing parameters
+        const existingParams = new URLSearchParams(url.search);
+        // Set or update lang parameter
+        existingParams.set("lang", lang);
+        // Rebuild URL with all parameters preserved
+        const newSearch = existingParams.toString();
+        if (newSearch) {
+            url.search = newSearch;
+        } else {
+            url.search = "";
+        }
         window.history.replaceState({}, "", url.toString());
     }
 
@@ -390,12 +400,21 @@
     }
 
     function initLanguage() {
+        // Check if we're on success.html - if so, don't modify URL at all
+        const isSuccessPage = window.location.pathname.includes('success.html');
+        
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = params.get("lang");
         const lang = getLangFromUrl();
+        
         applyTranslations(translations[lang] || translations[defaultLang]);
         markActiveLanguage(lang);
 
-        // Ensure URL always contains current language
-        setLangInUrl(lang);
+        // Only set lang in URL if it's missing or invalid, and we're NOT on success.html
+        // This preserves other URL parameters (like 'provider' on success.html)
+        if (!isSuccessPage && (!urlLang || !supportedLangs.includes(urlLang.toLowerCase()))) {
+            setLangInUrl(lang);
+        }
 
         // Wire up switcher links to change language without full reload
         document.querySelectorAll("[data-lang-switch]").forEach(link => {
@@ -410,7 +429,15 @@
         });
     }
 
-    if (document.readyState === "loading") {
+    // For success.html, wait a bit to ensure URL parameters are available
+    const isSuccessPage = window.location.pathname.includes('success.html');
+    
+    if (isSuccessPage) {
+        // Wait for URL parameters to be available
+        setTimeout(() => {
+            initLanguage();
+        }, 0);
+    } else if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", initLanguage);
     } else {
         initLanguage();
