@@ -182,6 +182,11 @@
             const result = await EmailCaptureService.submitEmailCapture(payload);
 
             if (result.success) {
+                // Track Facebook Pixel Lead event
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead');
+                }
+                
                 // Redirect to success page with language and email provider parameters
                 const currentLang = EmailCaptureService.getCurrentLocale();
                 // Extract email provider (part after @, before first dot)
