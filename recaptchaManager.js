@@ -13,6 +13,31 @@
         static widgetId = null;
         static loadPromise = null;
 
+        // Minimal translations for the reCAPTCHA modal texts
+        static recaptchaTexts = {
+            en: { title: "Please verify you are human", cancel: "Cancel" },
+            de: { title: "Bitte bestätigen Sie, dass Sie ein Mensch sind", cancel: "Abbrechen" },
+            es: { title: "Por favor verifica que eres humano", cancel: "Cancelar" },
+            fr: { title: "Merci de confirmer que vous êtes humain", cancel: "Annuler" },
+            it: { title: "Verifica di essere umano", cancel: "Annulla" },
+            cs: { title: "Ověřte, že jste člověk", cancel: "Zrušit" },
+            sk: { title: "Potvrďte, že ste človek", cancel: "Zrušiť" },
+        };
+
+        static getLangFromUrl() {
+            const langParam = new URLSearchParams(window.location.search).get("lang");
+            const supported = Object.keys(RecaptchaManager.recaptchaTexts);
+            const lower = langParam ? langParam.toLowerCase() : null;
+            if (lower && supported.includes(lower)) return lower;
+            return "en";
+        }
+
+        static getRecaptchaText(key) {
+            const lang = RecaptchaManager.getLangFromUrl();
+            const entry = RecaptchaManager.recaptchaTexts[lang] || RecaptchaManager.recaptchaTexts.en;
+            return entry[key] || RecaptchaManager.recaptchaTexts.en[key];
+        }
+
         static getContext() {
             // Shared context object for grecaptcha instance
             if (!window.__recaptchaCtx) {
@@ -59,9 +84,8 @@
                 // Create script tag
                 const script = document.createElement("script");
                 // Respect lang param from URL for reCAPTCHA locale
-                const langParam =
-                    new URLSearchParams(window.location.search).get("lang") || "en";
-                const hl = encodeURIComponent(langParam.toLowerCase());
+                const langParam = RecaptchaManager.getLangFromUrl();
+                const hl = encodeURIComponent(langParam);
                 script.src = `https://www.google.com/recaptcha/api.js?onload=recaptchaOnLoad&render=explicit&hl=${hl}`;
                 script.async = true;
                 script.defer = true;
@@ -154,7 +178,7 @@
                     `;
 
                     const title = document.createElement("h3");
-                    title.textContent = "Please verify you are human";
+                    title.textContent = RecaptchaManager.getRecaptchaText("title");
                     title.style.marginBottom = "20px";
                     modalContent.appendChild(title);
 
@@ -164,7 +188,7 @@
                     modalContent.appendChild(recaptchaContainer);
 
                     const closeButton = document.createElement("button");
-                    closeButton.textContent = "Cancel";
+                    closeButton.textContent = RecaptchaManager.getRecaptchaText("cancel");
                     closeButton.style.cssText = `
                         background: #e74c3c;
                         color: white;
