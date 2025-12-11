@@ -16,12 +16,12 @@
         // Minimal translations for the reCAPTCHA modal texts
         static recaptchaTexts = {
             en: { title: "Please verify you are human", cancel: "Cancel" },
-            de: { title: "Bitte bestätigen Sie, dass Sie ein Mensch sind", cancel: "Abbrechen" },
+            de: { title: "Bitte bestätige, dass du ein Mensch bist", cancel: "Abbrechen" },
             es: { title: "Por favor verifica que eres humano", cancel: "Cancelar" },
-            fr: { title: "Merci de confirmer que vous êtes humain", cancel: "Annuler" },
-            it: { title: "Verifica di essere umano", cancel: "Annulla" },
-            cs: { title: "Ověřte, že jste člověk", cancel: "Zrušit" },
-            sk: { title: "Potvrďte, že ste človek", cancel: "Zrušiť" },
+            fr: { title: "Merci de confirmer que tu es humain", cancel: "Annuler" },
+            it: { title: "Conferma che sei umano", cancel: "Annulla" },
+            cs: { title: "Ověř, že jsi člověk", cancel: "Zrušit" },
+            sk: { title: "Potvrď, že si človek", cancel: "Zrušiť" },
         };
 
         static getLangFromUrl() {
