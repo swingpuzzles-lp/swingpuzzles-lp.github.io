@@ -58,8 +58,11 @@
 
                 // Create script tag
                 const script = document.createElement("script");
-                script.src =
-                    "https://www.google.com/recaptcha/api.js?onload=recaptchaOnLoad&render=explicit";
+                // Respect lang param from URL for reCAPTCHA locale
+                const langParam =
+                    new URLSearchParams(window.location.search).get("lang") || "en";
+                const hl = encodeURIComponent(langParam.toLowerCase());
+                script.src = `https://www.google.com/recaptcha/api.js?onload=recaptchaOnLoad&render=explicit&hl=${hl}`;
                 script.async = true;
                 script.defer = true;
 
