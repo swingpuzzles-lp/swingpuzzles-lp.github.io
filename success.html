@@ -85,27 +85,38 @@
         const inboxIcon  = document.getElementById("inbox-icon");
         const inboxText  = document.getElementById("inbox-text");
 
+        const openWordMap = {
+            en: "Open",
+            de: "Öffne",
+            es: "Abrir",
+            fr: "Ouvrir",
+            it: "Apri",
+            cs: "Otevřít",
+            sk: "Otvoriť",
+        };
+
         const providerMap = {
-            gmail:   { url: "https://mail.google.com",       label: "Open Gmail",        icon: "icons/gmail.svg" },
-            outlook: { url: "https://outlook.live.com/mail", label: "Open Outlook",      icon: "icons/mail.svg" },
-            hotmail:{ url: "https://outlook.live.com/mail",  label: "Open Outlook",      icon: "icons/mail.svg" },
-            live:    { url: "https://outlook.live.com/mail", label: "Open Outlook",      icon: "icons/mail.svg" },
-            yahoo:   { url: "https://mail.yahoo.com",        label: "Open Yahoo Mail",   icon: "icons/mail.svg" },
-            centrum: { url: "https://mail.centrum.sk",       label: "Open Centrum Mail", icon: "icons/mail.svg" },
-            azet:    { url: "https://mail.centrum.sk",       label: "Open Azet Mail",    icon: "icons/mail.svg" },
-            zoznam:  { url: "https://mail.zoznam.sk",        label: "Open Zoznam Mail",  icon: "icons/mail.svg" },
-            proton:  { url: "https://mail.proton.me",        label: "Open Proton Mail",  icon: "icons/mail.svg" },
-            icloud:  { url: "https://www.icloud.com/mail",   label: "Open iCloud Mail",  icon: "icons/mail.svg" },
-            me:      { url: "https://www.icloud.com/mail",   label: "Open iCloud Mail",  icon: "icons/mail.svg" },
-            mac:     { url: "https://www.icloud.com/mail",   label: "Open iCloud Mail",  icon: "icons/mail.svg" },
+            gmail:   { url: "https://mail.google.com",       name: "Gmail",        icon: "icons/gmail.svg" },
+            outlook: { url: "https://outlook.live.com/mail", name: "Outlook",      icon: "icons/mail.svg" },
+            hotmail: { url: "https://outlook.live.com/mail", name: "Outlook",      icon: "icons/mail.svg" },
+            live:    { url: "https://outlook.live.com/mail", name: "Outlook",      icon: "icons/mail.svg" },
+            yahoo:   { url: "https://mail.yahoo.com",        name: "Yahoo Mail",   icon: "icons/mail.svg" },
+            centrum: { url: "https://mail.centrum.sk",       name: "Centrum Mail", icon: "icons/mail.svg" },
+            azet:    { url: "https://mail.centrum.sk",       name: "Azet Mail",    icon: "icons/mail.svg" },
+            zoznam:  { url: "https://mail.zoznam.sk",        name: "Zoznam Mail",  icon: "icons/mail.svg" },
+            proton:  { url: "https://mail.proton.me",        name: "Proton Mail",  icon: "icons/mail.svg" },
+            icloud:  { url: "https://www.icloud.com/mail",   name: "iCloud Mail",  icon: "icons/mail.svg" },
+            me:      { url: "https://www.icloud.com/mail",   name: "iCloud Mail",  icon: "icons/mail.svg" },
+            mac:     { url: "https://www.icloud.com/mail",   name: "iCloud Mail",  icon: "icons/mail.svg" },
         };
 
         if (inboxBtn) {
             const info = provider ? providerMap[provider] : null;
+            const openWord = openWordMap[lang] || openWordMap.en;
 
             if (info) {
                 inboxBtn.href = info.url;
-                inboxText.textContent = info.label;
+                inboxText.textContent = `${openWord} ${info.name}`;
                 inboxIcon.style.backgroundImage = `url('${info.icon}')`;
 
                 inboxBtn.style.display = "inline-flex";
