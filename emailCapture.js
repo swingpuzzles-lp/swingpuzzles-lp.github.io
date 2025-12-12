@@ -184,7 +184,7 @@
             if (result.success) {
                 // Track Facebook Pixel Lead event
                 if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Lead');
+                    fbq('trackCustom', 'EmailEntered');
                 }
                 
                 // Redirect to success page with language and email provider parameters
