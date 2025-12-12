@@ -16,7 +16,7 @@
                 : "https://mail.swingpuzzles.com/process.php";
         }
 
-        static getCurrentLocale() {
+        static getCurrentLang() {
             const params = new URLSearchParams(window.location.search);
             const lang = (params.get("lang") || "en").toLowerCase();
             return lang;
@@ -168,7 +168,7 @@
             const payload = {
                 email,
                 name: name || undefined,
-                locale: EmailCaptureService.getCurrentLocale(),
+                lang: EmailCaptureService.getCurrentLang(),
                 hotPot: EmailCaptureService.generateHotPotValue(),
                 recaptchaToken,
                 timezone: EmailCaptureService.getCurrentTimezone(),
@@ -188,7 +188,7 @@
                 }
                 
                 // Redirect to success page with language and email provider parameters
-                const currentLang = EmailCaptureService.getCurrentLocale();
+                const currentLang = EmailCaptureService.getCurrentLang();
                 // Extract email provider (part after @, before first dot)
                 const emailParts = email.split('@');
                 const domain = emailParts[1];
