@@ -12,7 +12,7 @@
                 host === "0.0.0.0";
 
             return isLocal
-                ? "http://localhost:8000/www/process.php"
+                ? "http://localhost:5214/api/email/subscriptions/subscribe"//"http://localhost:8000/www/process.php"
                 : "https://mail.swingpuzzles.com/process.php";
         }
 
@@ -78,15 +78,19 @@
     function initEmailForm() {
         const form = document.querySelector("#signup form");
         if (!form) return;
-
+    
         const emailInput = /** @type {HTMLInputElement|null} */ (
             form.querySelector("#email")
         );
         const nameInput = /** @type {HTMLInputElement|null} */ (
             form.querySelector("#name")
         );
-
-        // Optional message container under the form
+    
+        const submitCta = /** @type {HTMLAnchorElement|null} */ (
+            form.querySelector("#submitCta")
+        );
+        if (!submitCta) return;
+    
         let messageEl = document.getElementById("email-form-message");
         if (!messageEl) {
             messageEl = document.createElement("div");
@@ -95,9 +99,10 @@
             messageEl.style.fontSize = "0.9rem";
             form.appendChild(messageEl);
         }
-
-        form.addEventListener("submit", async function (e) {
-            e.preventDefault();
+    
+        submitCta.addEventListener("click", async function (e) {
+            e.preventDefault(); // zrušíme defaultné presmerovanie <a>
+            
             if (!emailInput) return;
 
             const email = emailInput.value.trim();

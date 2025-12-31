@@ -175,11 +175,14 @@ body {
     color: #4A3100;
     padding: 16px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    display: block;
+    text-decoration: none;
+    text-align: center;
 }
 
 .submit-button:hover {
