@@ -197,7 +197,7 @@
                 // Extract email provider (part after @, before first dot)
                 const emailParts = email.split('@');
                 const domain = emailParts[1];
-                const emailProvider = domain ? domain.split('.')?.[0] || '' : '';
+                const emailProvider = (domain ? domain.split('.')?.[0] || '' : '').toLowerCase();
                 
                 // Store parameters in sessionStorage as backup (in case Vite redirect loses them)
                 sessionStorage.setItem('successParams', JSON.stringify({
